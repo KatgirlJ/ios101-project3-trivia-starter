@@ -53,7 +53,8 @@ class ViewController: UIViewController {
         types.text = "\(currentQuestion.questionType) : \(currentQuestion.questionSubType)"
         questions.text = currentQuestion.question
         
-        let answerChoices = Array(currentQuestion.answers.keys)
+        //let answerChoices = Array(currentQuestion.answers.keys)
+        let answerChoices = currentQuestion.answers.keys.sorted()
         
         for (index, button) in answerButtons.enumerated(){
             if(index < currentQuestion.answers.count){
@@ -86,12 +87,13 @@ class ViewController: UIViewController {
             displayCurrentQuestion()
         }
         else{
-            
+            showTotalScore()
         }
     }
     
     func showTotalScore(){
-        questionLabel.text = "Congraduations your final score is \(score)/\(Questions.questionsAsked.count)"
+        questionLabel.text = "Congratulations your final score is \(score)/\(Questions.questionsAsked.count)"
+        typeWithSubLabel.text = ""
     }
     /*public func checkingAnswer(_ currentAnswers: Questions.questionsAsked.answers) -> Bool{
         for (answer in currentAnswers.values){

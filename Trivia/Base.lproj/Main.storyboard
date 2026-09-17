@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B3s-z6-dBz">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
@@ -13,25 +13,15 @@
             <objects>
                 <viewController id="B3s-z6-dBz" customClass="ViewController" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uU0-ry-E1I">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type: Subtype" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5t5-er-t7O">
-                                <rect key="frame" x="135.66666666666663" y="211" width="121.66666666666669" height="21.666666666666657"/>
+                                <rect key="frame" x="99" y="118" width="122" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbV-ay-N4m">
-                                <rect key="frame" x="118.33333333333326" y="511" width="158.33333333333337" height="58"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="FbV-ay-N4m" secondAttribute="height" multiplier="134:29" id="etE-mW-sIy"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Answer 1">
-                                    <color key="baseBackgroundColor" red="0.2666666667" green="0.59999999999999998" blue="0.57254901960000004" alpha="0.54035735910000005" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aa7-4Q-ssr">
                                 <rect key="frame" x="118.33333333333326" y="585" width="158.33333333333337" height="58"/>
                                 <constraints>
@@ -41,6 +31,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Answer 2">
                                     <color key="baseBackgroundColor" red="0.26666666666666666" green="0.59999999999999998" blue="0.5725490196078431" alpha="0.54035735907169746" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="B3s-z6-dBz" eventType="touchUpInside" id="9KA-8z-CXy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vf8-8u-zBS">
                                 <rect key="frame" x="118.33333333333326" y="657" width="158.33333333333337" height="58"/>
@@ -51,6 +44,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Answer 3">
                                     <color key="baseBackgroundColor" red="0.2666666667" green="0.59999999999999998" blue="0.57254901960000004" alpha="0.54035735910000005" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="B3s-z6-dBz" eventType="touchDragInside" id="X1A-P9-t03"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBw-qN-Lai">
                                 <rect key="frame" x="118.33333333333326" y="724" width="158.33333333333337" height="58"/>
@@ -61,12 +57,15 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Answer 4">
                                     <color key="baseBackgroundColor" red="0.2666666667" green="0.59999999999999998" blue="0.57254901960000004" alpha="0.54035735910000005" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="B3s-z6-dBz" eventType="touchDragInside" id="IPx-yw-ZUX"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQA-ke-ubH">
-                                <rect key="frame" x="40" y="240.66666666666669" width="313" height="236.66666666666669"/>
+                                <rect key="frame" x="40" y="147.5" width="240" height="181.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XkH-fY-e0y">
-                                        <rect key="frame" x="20" y="18" width="273" height="219"/>
+                                        <rect key="frame" x="20" y="20" width="200" height="141.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -85,7 +84,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question #" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="7nG-Sx-6dV">
-                                <rect key="frame" x="98" y="155" width="197" height="53"/>
+                                <rect key="frame" x="98" y="57" width="124" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="PkV-7c-dpm"/>
                                 </constraints>
@@ -93,6 +92,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbV-ay-N4m">
+                                <rect key="frame" x="26" y="337" width="268" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="A61-rr-id5"/>
+                                    <constraint firstAttribute="width" secondItem="FbV-ay-N4m" secondAttribute="height" multiplier="134:29" id="etE-mW-sIy"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Answer 1">
+                                    <color key="baseBackgroundColor" red="0.2666666667" green="0.59999999999999998" blue="0.57254901960000004" alpha="0.54035735910000005" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="B3s-z6-dBz" eventType="touchUpInside" id="brE-J0-eUa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Gl-rm-u8L"/>
                         <color key="backgroundColor" red="0.62352941176470589" green="0.88627450980392153" blue="0.67843137254901964" alpha="0.92652329749103945" colorSpace="custom" customColorSpace="calibratedRGB"/>
