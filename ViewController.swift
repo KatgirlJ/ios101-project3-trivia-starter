@@ -37,6 +37,7 @@ class ViewController: UIViewController {
     func displayCurrentQuestion(){
         let allQuestions = Questions.questionsAsked
         
+        // Unwrapping all my IBOutlets
         guard questionIndex < allQuestions.count else{return}
         
         guard let numLabel = questionNumLabel else{return}
@@ -46,14 +47,15 @@ class ViewController: UIViewController {
         
         
         
+        // Will keep us on track with the current question
         
         let currentQuestion = allQuestions[questionIndex]
         
-        numLabel.text = "Question \(questionIndex+1) / \(allQuestions.count)"
+        //Will ask the question and will change to new questions
+        numLabel.text = "Question \(questionIndex + 1)/\(Questions.questionsAsked.count)"
         types.text = "\(currentQuestion.questionType) : \(currentQuestion.questionSubType)"
         questions.text = currentQuestion.question
         
-        //let answerChoices = Array(currentQuestion.answers.keys)
         let answerChoices = currentQuestion.answers.keys.sorted()
         
         for (index, button) in answerButtons.enumerated(){
@@ -71,7 +73,7 @@ class ViewController: UIViewController {
         guard questionIndex < allQuestions.count else { return }
         
         let currentQuestion = allQuestions[questionIndex]
-        let answerChoices = Array(currentQuestion.answers.keys)
+        let answerChoices = currentQuestion.answers.keys.sorted()
         
         guard let buttonIndex = answerButtons.firstIndex(of: sender),
               buttonIndex < answerChoices.count else { return }
@@ -94,16 +96,11 @@ class ViewController: UIViewController {
     func showTotalScore(){
         questionLabel.text = "Congratulations your final score is \(score)/\(Questions.questionsAsked.count)"
         typeWithSubLabel.text = ""
-    }
-    /*public func checkingAnswer(_ currentAnswers: Questions.questionsAsked.answers) -> Bool{
-        for (answer in currentAnswers.values){
-            if(answer){
-                score+=1
-                return true
-            }
+        //for (index, button) in answerButtons.enumerated(){
+        for button in answerButtons {
+            button.isHidden = true
         }
-        return false
-    }*/
+    }
             
     //}
     /*
